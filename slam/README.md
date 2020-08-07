@@ -11,3 +11,6 @@ gmapping 실행
 
 SLAM으로 만든 맵 import
 - rosrun map_server map_saver -f ~/map
+
+Navigation
+- roslaunch turtlebot3_navigation turtlebot3_navigation.launch
