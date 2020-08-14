@@ -1,7 +1,7 @@
 SLAM 스터디 관련
 
 맵파일(mart) launch
-- roslaunch turtlebot3_gazebo mart.launch
+- roslaunch turtlebot3_gazebo mart_new.launch
 
 gmapping 실행
 - roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
