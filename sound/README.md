@@ -18,9 +18,9 @@ snowboy/examples/Python3 폴더에 my_demo.py 코드 추가
 해당 코드를 통해 robot-user 간 음성인식을 통한 communication 진행
 
 
-# source env/bin/activate
-# python my_demo.py
-# python2 sub_msg.py
+- source env/bin/activate
+- python my_demo.py
+- python2 sub_msg.py
 
 
 
