@@ -13,4 +13,11 @@ snowboy 핵심어 검출 설정 과정
 설치 완료 후, snowboy/examples/Python3 폴더에서 코드 build후 my_demo.py 코드 추가
 ~/env/lib/python3.x/site_packages/googlesamples/assistant/grpc 폴더에 pushtotalk_fix.py추가
 
+snowboy/examples/Python3 폴더에 my_demo.py 코드 추가
+
+해당 코드를 통해 robot-user 간 음성인식을 통한 communication 진행
+
+
+
+
 

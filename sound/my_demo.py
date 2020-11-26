@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*- 
-
+#  ROBOT-USER 간 음성을 이용한 communication 진행
+# ROS INT32 메세지 이용
 
 import snowboydecoder
 import sys
@@ -45,18 +46,11 @@ def detectedCallback():
           flag+=8
       if "과자" in a[0]:
           flag+=16
-      if "음료" in a[0]:
-          flag+=32
       if "견과류" in a[0]:
           flag+=64
       if "라면" in a[0]:
           flag+=128
-      if "위생" in a[0]:
-          flag+=256
   print(a,flag)
-#  f=open('test.txt','w+')
-#  f.write(str(flag))
-#  f.close()
   # 목적지 정보 플래그로 보내기
   subprocess.Popen(["rosrun","input_msg", "input_talker", str(flag)])
   detector.start(detected_callback=detectedCallback,

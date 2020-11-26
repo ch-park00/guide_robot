@@ -326,6 +326,20 @@ def main(api_endpoint=api_endpoint, credentials=credentials, project_id=project_
         iter_size=audio_iter_size,
         sample_width=audio_sample_width,
     )
+    conversation_stream1 = audio_helpers.ConversationStream(
+        source=audio_helpers.WaveSource(
+            open("time_en.wav", 'rb'), #일사 로봇과 대화 음성파일
+            sample_rate=audio_sample_rate,
+            sample_width=audio_sample_width
+        ),
+        sink=audio_helpers.WaveSink(
+            open("tmp.wav", 'wb'),
+            sample_rate=audio_sample_rate,
+            sample_width=audio_sample_width
+        ),
+        iter_size=audio_iter_size,
+        sample_width=audio_sample_width,
+    )
 
     if not device_id or not device_model_id:
         try:
@@ -391,7 +405,7 @@ def main(api_endpoint=api_endpoint, credentials=credentials, project_id=project_
             time.sleep(delay)
 
     with SampleAssistant(lang, device_model_id, device_id,
-                         conversation_stream, display,
+                         conversation_stream1, display,
                          grpc_channel, grpc_deadline,
                          device_handler) as assistant:
         wait_for_user_trigger = once
@@ -399,6 +413,7 @@ def main(api_endpoint=api_endpoint, credentials=credentials, project_id=project_
             if wait_for_user_trigger:
                 break
             print('요청 사항을 말하세요')
+            assistant.conversation_stream=conversation_stream
             continue_conversation, response = assistant.assist()
             # wait for user trigger if there is no follow-up turn in
            # the conversation.
