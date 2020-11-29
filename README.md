@@ -6,6 +6,6 @@
 
 - slam/Navigation 파라미터 정보 : slam
 
-- ROS 및 navigation 관련 코드 : Destination
+- ROS 및 navigation 관련 코드 : Navigation Script
 
 - 시험 시 사용했던 맵 파일
